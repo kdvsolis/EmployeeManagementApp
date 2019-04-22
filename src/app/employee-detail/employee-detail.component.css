@@ -1,0 +1,57 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+  width: 80%;
+  margin: auto;
+  overflow: auto;
+  position: relative;
+  background-color: blue;
+  background-image: linear-gradient(to bottom, blue, lightblue); 
+}
+.isbn-col {
+  flex: 0 0 100px !important;
+  white-space: unset !important;
+}
+.button-row {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.datagrid table {
+	border-collapse: collapse;
+	text-align: left;
+} 
+.datagrid {
+	margin-left: 140px;
+    max-height: 500px;
+    min-width: 300px;
+	font: normal 12px/150% Arial, Helvetica, sans-serif;
+	background: #fff;
+	overflow: hidden;
+	width: 80%;
+}
+.datagrid table td {
+	width: 20%;
+}
+
+.datagrid table th {
+	padding: 3px 7px; 
+}
+
+.datagrid table tbody td { 
+	color: #00496B;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.datagrid table tbody td:first-child { 
+	border-left: none; 
+}
+
+.datagrid table tbody tr:last-child td {
+	border-bottom: none; 
+}

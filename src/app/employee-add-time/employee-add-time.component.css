@@ -1,0 +1,63 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.example-full-width {
+  width: 100%;
+}
+.example-full-width:nth-last-child() {
+  margin-bottom: 10px;
+}
+.button-row {
+  margin: auto;
+  text-align: center;
+}
+
+.datagrid table {
+  border: 1px solid #dddddd;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  max-height: 500px;
+  min-width: 300px;
+  width: 30%;
+  margin: auto;
+}
+
+.datagrid td, th {
+  padding: 8px;
+}
+.datagrid th {
+  border: 1px solid #dddddd;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+input[type=date] {
+  width: 180px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 8px 8px 8px 8px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=time] {
+  width: 140px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 5px 10px 5px 10px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}

@@ -1,0 +1,29 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit(employeeForm.value)">
+	<div class="datagrid">
+		<table>
+		  <tr>
+			<th colspan="3">Edit Employee Data</th>
+		  </tr>
+		  <tr>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+			<td align="center" style="font-weight: bold;">Name:</td>
+			<td>
+			  <input type="text" placeholder="Name" formControlName="name" pattern="[A-Za-z. ]+"  ng-model="person.levels" title="Please enter name">
+           </td>
+		  </tr>
+		  <tr>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+			<td align="center" style="font-weight: bold;">Active</td>
+			<td>
+				<select formControlName='active'>
+				  <option value='true' [selected]='active=="true"'>true</option>
+				  <option value='false' [selected]='active=="false"'>false</option>
+				</select>
+			</td>
+		  </tr>
+		</table>
+	  <div class="button-row">
+		<button type="submit" [disabled]="!employeeForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+	  </div>
+	</div>
+</form>

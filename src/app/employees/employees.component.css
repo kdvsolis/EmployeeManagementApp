@@ -1,0 +1,37 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+  width: 80%;
+  margin: auto;
+  overflow: auto;
+  position: relative;
+  background-color: blue;
+  background-image: linear-gradient(to bottom, blue, lightblue); 
+}
+.isbn-col {
+  flex: 0 0 100px !important;
+  white-space: unset !important;
+}
+.button-row {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+input[type=text] {
+  width: 170px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 5px 20px 5px 10px;
+  margin: 8px 0px 8px 20px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}

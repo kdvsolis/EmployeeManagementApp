@@ -1,0 +1,33 @@
+<form [formGroup]="datetimeForm" (ngSubmit)="onFormSubmit(datetimeForm.value)">
+	<div class="datagrid">
+		<table>
+		  <tr>
+			<th colspan="3">Edit Employee Log Data</th>
+		  </tr>
+		  <tr>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+			<td align="center" style="font-weight: bold;">Date:</td>
+			<td>
+			  <input type="date" formControlName="date">
+           </td>
+		  </tr>
+		  <tr>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+			<td align="center" style="font-weight: bold;">Time In</td>
+			<td>
+			  <input type="time" formControlName="time_in">
+			</td>
+		  </tr>
+		  <tr>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+			<td align="center" style="font-weight: bold;">Time Out</td>
+			<td>
+			  <input type="time" formControlName="time_out">
+			</td>
+		  </tr>
+		</table>
+	  <div class="button-row">
+		<button type="submit" [disabled]="!datetimeForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+	  </div>
+	</div>
+</form>
