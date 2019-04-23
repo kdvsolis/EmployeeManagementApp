@@ -21,7 +21,7 @@
   font-size: 18px;
 }
 
-input[type=text] {
+input[type=text], select {
   width: 170px;
   box-sizing: border-box;
   border: 2px solid #ccc;

@@ -22,9 +22,8 @@ router.get('/', function(req, res, next) {
   });
 });
 /* GET FILTERED EMPLOYEE BY NAME */
-router.get('/employee-search/:name', function(req, res, next) {
-  console.log(req.params.name);
-  Employee.find({name :  {$regex : req.params.name}}, function (err, post) {
+router.post('/employee-search', function(req, res, next) {
+  Employee.find({ $and: [{name :  {$regex : req.body.search}}, {active : req.body.active}]}, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });

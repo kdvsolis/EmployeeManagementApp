@@ -41,9 +41,9 @@ export class ApiService {
 		catchError(this.handleError));
 	}
   
-  getFilteredEmployees(name: string): Observable<any> {
-	  const url = `${apiUrl}/employee-search/${name}`;
-	  return this.http.get(url, httpOptions).pipe(
+  getFilteredEmployees(data): Observable<any> {
+	  const url = `${apiUrl}/employee-search`;
+	  return this.http.post(url, data, httpOptions).pipe(
 		map(this.extractData),
 		catchError(this.handleError));
 	}

@@ -17,7 +17,7 @@ export class EmployeesComponent implements OnInit {
   employees: any;
   
   displayedColumns = ['userID', 'name', 'active', 'pageview', 'edit', 'delete'];
-  dataSource = new EmployeeDataSource(this.api, false, "");
+  dataSource = new EmployeeDataSource(this.api, false, null);
   
   ngOnInit() {
 	this.api.getEmployees()
@@ -27,7 +27,7 @@ export class EmployeesComponent implements OnInit {
 	}, err => {
 	  console.log(err);
 	});
-	this.searchForm = this.formBuilder.group({ search : []});
+	this.searchForm = this.formBuilder.group({ search : [], active: []});
   }
   
   deleteEmployee(userID) {
@@ -35,7 +35,7 @@ export class EmployeesComponent implements OnInit {
 	  if (r == true) {
 		  this.api.deleteEmployee(userID)
 			.subscribe(res => {
-				this.dataSource = new EmployeeDataSource(this.api, false, "");
+				this.dataSource = new EmployeeDataSource(this.api, false, null);
 			  }, (err) => {
 				console.log(err);
 			  }
@@ -47,7 +47,7 @@ export class EmployeesComponent implements OnInit {
   
   searchEmployee(form:NgForm) {
 	  var search = form["search"];
-	  this.dataSource = new EmployeeDataSource(this.api, true, search);
+	  this.dataSource = new EmployeeDataSource(this.api, true, form);
 	  /*this.api.getFilteredEmployees(search)
 		.subscribe(res => {
 			this.dataSource = new EmployeeDataSource(this.api, true, search);
@@ -61,17 +61,16 @@ export class EmployeesComponent implements OnInit {
 }
 
 export class EmployeeDataSource extends DataSource<any> {
-  constructor(private api: ApiService, private filtered: boolean, private name: string) {
+  constructor(private api: ApiService, private filtered: boolean, private data: NgForm) {
     super()
   }
   connect() {
-	if(!this.filtered || this.name == "") {
-		console.log("name" + this.name);
+	if(!this.filtered || this.data["search"] == null) {
         return this.api.getEmployees();
 	}
 	else {
-		console.log("name filter" + this.name);
-		return this.api.getFilteredEmployees(this.name);
+		console.log("name filter" + this.data["search"]);
+		return this.api.getFilteredEmployees(this.data);
 	}
   }
   disconnect() {

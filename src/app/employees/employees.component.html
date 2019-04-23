@@ -6,7 +6,11 @@
   <form [formGroup]="searchForm" (ngSubmit)="searchEmployee(searchForm.value)" style="display: flex; flex-direction: row;">
 
       <input type="text" placeholder="Search" formControlName="search">
-  <button type="submit" color="primary" style="margin-top:8px; height:32px; width:40px;"><mat-icon>search</mat-icon></button>
+	  <select formControlName="active">
+		  <option value="true">true</option>
+		  <option value="false">false</option>
+	  </select>
+	  <button type="submit" color="primary" style="margin-top:8px; height:32px; width:40px;"><mat-icon>search</mat-icon></button>
   </form>
   <div class="button-row">
     <a mat-raised-button color="primary" [routerLink]="['/employee-add']"><mat-icon>add</mat-icon></a>
