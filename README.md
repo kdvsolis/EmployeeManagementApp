@@ -1,7 +1,7 @@
 Employee Management App
 ========================
 
-##Installation Instructions:
+## Installation Instructions:
 
 Note: This is for running the app in Windows 10 64bit Environment
 
@@ -13,7 +13,7 @@ Note: This is for running the app in Windows 10 64bit Environment
 6. Clone this repository using ```git clone https://github.com/kdvsolis/EmployeeManagementApp.git```
 7. In the same command prompt, do ```cd ./EmployeeManagementApp``` then do command ```npm update```
 
-##App Usage:
+## App Usage:
 
 1. Open command prompt then do ```cd C:/path/to/directory``` 
 2. Run app using command ```npm start``` 
@@ -34,6 +34,6 @@ Note: This is for running the app in Windows 10 64bit Environment
 
 
 
-##References:
+## References:
 https://medium.com/@maheshkariya/mean-stack-angular-6-crud-web-application-8c92ae93690f
 https://www.toptal.com/angular/angular-6-jwt-authentication
